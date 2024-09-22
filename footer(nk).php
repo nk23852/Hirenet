@@ -11,7 +11,7 @@
             <h3>Useful Links</h3>
             <ul>
                 <li><a href="about-us.php">About Us</a></li>
-                <li><a href="terms.php">Terms & Conditions</a></li>
+                <li><a href="terms&conditions(nk).php">Terms & Conditions</a></li>
                 <li><a href="privacy.php">Privacy Policy</a></li>
             </ul>
         </div>

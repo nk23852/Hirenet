@@ -67,9 +67,9 @@ nav ul li a:hover {
 }
 
 .buttons button {
-    margin-left: 40px;
+    margin-left: 30px;
     padding: 10px 15px;
-    font-size: 30px;
+    font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
     background-color: #33ff00; /* Slightly different blue for buttons */
@@ -82,4 +82,33 @@ nav ul li a:hover {
 .buttons button:hover {
     background-color: #0056b3;
     transform: scale(1.1); /* Slightly enlarge button */
+}
+
+
+nav ul li .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #005bb5;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    margin: 0; /* Remove margin from dropdown items */
+    padding: 0;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.dropdown li a:hover {
+    background-color: #003f7f; /* Change background on hover */
 }

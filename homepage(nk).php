@@ -11,43 +11,131 @@
     </section>
 
     <!-- Job Post Slider Section -->
-    <section class="job-slider">
-        <h2>Featured Jobs</h2>
-        <div class="slider-container">
-            <button class="prev" id="prevBtn">&#10094;</button>
-            <div class="job-posts" id="jobPosts">
-                <div class="job-post">
-                    <h3>Software Developer</h3>
-                    <p>Company: ABC Corp</p>
-                    <p>Location: New York, NY</p>
-                    <p>Salary: $80,000 - $100,000</p>
-                    <a href="#">View Details</a>
-                </div>
-                <div class="job-post">
-                    <h3>Data Analyst</h3>
-                    <p>Company: XYZ Inc</p>
-                    <p>Location: San Francisco, CA</p>
-                    <p>Salary: $70,000 - $90,000</p>
-                    <a href="#">View Details</a>
-                </div>
-                <div class="job-post">
-                    <h3>UI/UX Designer</h3>
-                    <p>Company: DesignPro</p>
-                    <p>Location: Remote</p>
-                    <p>Salary: $60,000 - $85,000</p>
-                    <a href="#">View Details</a>
-                </div>
-                <div class="job-post">
-                    <h3>Product Manager</h3>
-                    <p>Company: InnovateTech</p>
-                    <p>Location: Seattle, WA</p>
-                    <p>Salary: $90,000 - $120,000</p>
-                    <a href="#">View Details</a>
-                </div>
-            </div>
-            <button class="next" id="nextBtn">&#10095;</button>
-        </div>
-    </section>
+    <?php
+// index.php
+
+// Job postings data
+$jobs = [
+    [
+        "title" => "Software Engineer",
+        "company" => "Tech Solutions Inc.",
+        "location" => "San Francisco, CA",
+        "link" => "#"
+    ],
+    [
+        "title" => "Graphic Designer",
+        "company" => "Creative Minds Studio",
+        "location" => "New York, NY",
+        "link" => "#"
+    ],
+    [
+        "title" => "Data Analyst",
+        "company" => "DataWorks Ltd.",
+        "location" => "Chicago, IL",
+        "link" => "#"
+    ],
+    [
+        "title" => "Marketing Manager",
+        "company" => "BrandPro Marketing",
+        "location" => "Austin, TX",
+        "link" => "#"
+    ]
+];
+
+// Function to display job posts
+function display_jobs($jobs) {
+    echo '<ul class="job-list">';
+    foreach ($jobs as $job) {
+        echo '<li class="job-item">';
+        echo '<h2 class="job-title">' . $job["title"] . '</h2>';
+        echo '<p class="company-name">' . $job["company"] . '</p>';
+        echo '<p class="job-location">' . $job["location"] . '</p>';
+        echo '<a class="apply-btn" href="' . $job["link"] . '">Apply Now</a>';
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings - Hirenet</title>
+    <style>
+        /* CSS styles for the job listings */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .job-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .job-item {
+            background-color: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .job-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .job-title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .company-name {
+            color: #777;
+        }
+
+        .job-location {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .apply-btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Latest Job Listings</h1>
+
+        <!-- Call the function to display jobs -->
+        <?php display_jobs($jobs); ?>
+    </div>
+
+</body>
+</html>
+
 
     <script src="../Hirenet/js/homepage(nk).js"></script>
     <link rel="stylesheet" href="../Hirenet/css/homepage(nk).css">
