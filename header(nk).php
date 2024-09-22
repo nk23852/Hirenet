@@ -23,7 +23,6 @@
                     <li><a href="jobSeekerUser(nk).php">Job Seeker</a></li>
                     <li><a href="job_recruiter_profile.php">Job Recruiter</a></li>
                 </ul></li>
-                <li><a href="faq.php">FAQ</a></li>
             </ul>
         </nav>
         <div class="buttons">
