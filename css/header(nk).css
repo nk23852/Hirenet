@@ -17,7 +17,7 @@ body{
 }
 /* Header Style */
 header {
-    background-color: rgb(89, 92, 255, 0.8); /* Professional blue color */
+    background-color: rgba(0, 0, 0, 0.8); 
     padding: 30px;
     margin: 0;
     display: flex;
@@ -88,7 +88,7 @@ nav ul li a:hover {
 nav ul li .dropdown {
     display: none; /* Hide dropdown by default */
     position: absolute;
-    background-color: #005bb5;
+    background-color: #000000;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
