@@ -3,7 +3,7 @@ document.getElementById('recruiterBtn').addEventListener('click', function() {
 });
 
 document.getElementById('seekerBtn').addEventListener('click', function() {
-    window.location.href = 'jobseekersignup(dev).php';
+    window.location.href = 'sign_up.php';
 });
 
 

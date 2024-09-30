@@ -1,14 +1,20 @@
 <?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="hirenetdb";
 
-$servername = "localhost";
+//create connection
 
-$username = "root";
-$password = "";
+$conn = new mysqli($servername,$username,$password,$dbname);
 
-$dbname = "HirenetDB";
+//check
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($conn -> connect_error){
+    die("connestion Failed: ".$conn -> connect_error);
 }
+else{
+    echo"connection succeeded";
+}
+
+?>
