@@ -4,7 +4,7 @@
     width: 80%;
     margin: 50px auto;
     text-align: center;
-    background-color: rgba(223, 255, 0, 0.8);
+    background-color: #3c0daa(223, 255, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -12,22 +12,27 @@
 
 .intro-section h2 {
     font-size: 2em;
-    color: #000cb3;
+    color: #3ad1db;
     margin-bottom: 10px;
 }
 
 .intro-section p {
     font-size: 20px;
-    color: #333;
+    color: #65d8a8;
     line-height: 1.6;
 }
 
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
     margin: 0;
     padding: 0;
+
+    background-image: url(../images/loginback\(nk\).jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .container {

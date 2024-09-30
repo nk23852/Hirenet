@@ -1,4 +1,5 @@
-header{
+/* Reset */
+header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,18 +9,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
-body{
-    background-image: url(../images/background\(nk1\).jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: 0px;
-}
+
 /* Header Style */
 header {
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 30px;
-    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,6 +43,7 @@ nav ul {
 
 nav ul li {
     margin-right: 30px;
+    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
@@ -62,17 +57,18 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Buttons */
 .buttons {
     display: flex;
 }
 
 .buttons button {
-    margin-left: 30px;
+    margin-left: 15px;
     padding: 10px 15px;
     font-size: 25px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: bolder;
-    background-color: #33ff00; /* Slightly different blue for buttons */
+    background-color: #1E90FF; /* Green for buttons */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -80,26 +76,29 @@ nav ul li a:hover {
 }
 
 .buttons button:hover {
-    background-color: #0056b3;
+    background-color: #170d97; /* Hover effect */
     transform: scale(1.1); /* Slightly enlarge button */
 }
 
-
-nav ul li .dropdown {
+/* General Dropdown Styling */
+nav ul li .dropdown, 
+.buttons .dropdown {
     display: none; /* Hide dropdown by default */
     position: absolute;
     background-color: #000000;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    min-width: 150px;
 }
 
-nav ul li:hover .dropdown {
+nav ul li:hover .dropdown,
+.buttons .dropdown-container:hover .dropdown {
     display: block; /* Show dropdown on hover */
 }
 
 .dropdown li {
-    margin: 0; /* Remove margin from dropdown items */
+    margin: 0;
     padding: 0;
 }
 
@@ -107,8 +106,5 @@ nav ul li:hover .dropdown {
     display: block;
     padding: 10px;
     color: white;
-}
-
-.dropdown li a:hover {
-    background-color: #003f7f; /* Change background on hover */
+    text-decoration: none;
 }

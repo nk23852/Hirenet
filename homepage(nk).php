@@ -63,6 +63,9 @@ function display_jobs($jobs) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings - Hirenet</title>
+    <link rel="stylesheet" href="../Hirenet/css/homepage(nk).css">
+
+<!--
     <style>
         /* CSS styles for the job listings */
         body {
@@ -122,7 +125,7 @@ function display_jobs($jobs) {
         .apply-btn:hover {
             background-color: #005bb5;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -133,12 +136,12 @@ function display_jobs($jobs) {
         <?php display_jobs($jobs); ?>
     </div>
 
-</body>
-</html>
+
 
 
     <script src="../Hirenet/js/homepage(nk).js"></script>
-    <link rel="stylesheet" href="../Hirenet/css/homepage(nk).css">
+</body>
+
     
 <?php
     include 'footer(nk).php'; 

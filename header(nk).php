@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirenet</title>
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="../Hirenet/css/header(nk).css">
+    <link rel="stylesheet" href="../Hirenet/css/header3(nk).css">
 </head>
 <body>
     <header>
@@ -18,20 +18,16 @@
                 <li><a href="homepage(nk).php">Home</a></li>
                 <li><a href="jobs.php">Jobs</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="profile.php">Profile</a>
-                <ul class="dropdown">
-                    <li><a href="jobSeekerUser(nk).php">Job Seeker</a></li>
-                    <li><a href="job_recruiter_profile.php">Job Recruiter</a></li>
-                </ul></li>
+                <li><a href="profile.php">Profile</a></li>
             </ul>
         </nav>
-        <div class="buttons">
-            <button id="recruiterBtn">Job Recruiter</button>
-            <button id="seekerBtn">Job Seeker</button>
-        </div>
-    </header>
 
-    
+        <div class="buttons">
+            <button id="recruiterBtn">Log in</button>
+            <button id="seekerBtn">Sign up</button>
+        </div>
+
+    </header>
 
     <!-- Link to external JS -->
     <script src="../Hirenet/js/header(nk).js"></script>
