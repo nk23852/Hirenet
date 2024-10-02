@@ -1,119 +1,82 @@
 <?php
 session_start(); // Start the session
-include "db_connect.php";
+include "db_connect.php"; // Include database connection
 
 $error = '';
-/*
-if ($_SERVER['REQUEST_METHOD'] == 'POST') //&& isset($_POST['register']))
- {
-    $username_or_email = $_POST['username_or_email'];
-    $password = $_POST['password'];
-    //$name = $_POST['name'];
-    //$address = $_POST['address'];
-    //$phone_number = $_POST['phone_number'];
 
-    // Check if the username or email already exists
-    $check_sql = "SELECT * FROM users WHERE username_or_email='$username_or_email'";
-    $check_result = $conn->query($check_sql);
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Capture username and password from the form
+    $user = $_POST['uname']; // Use 'uname' from the form
+    $pass = $_POST['psw'];   // Use 'psw' from the form
 
-    if ($check_result->num_rows > 0) {
-        // Username or email already exists
-        $error = "Username or email is already registered!";
-    } else {
-        // Hash the password
-        $hashed_password = MD5($password);
-
-        // Insert new user into the database
-        $register_sql = "INSERT INTO users (username_or_email, password, user_type, name, phone_number) 
-                         VALUES ('$username_or_email', '$hashed_password', '$jobseeker','$name', '$phone_number')";
-
-        if ($conn->query($register_sql) === TRUE) {
-            // Registration successful, get the user ID of the newly created user
-            $user_id = $conn->insert_id;
-
-            // Set session variables with user_id and role
-            $_SESSION['user_id'] = $user_id;
-            $_SESSION['user_type'] = 'jobseeker'; // Default role is customer
-
-            // Redirect to the customer home page
-            header("Location: ../homepage(nk).php");
-            exit();
-        } else {
-            $error = "Error in registration: " . $conn->error;
-        }
-    }
-    
-}*/
-
-
-// Login Section
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-
-    // Check if the user exists and password is correct
-    $user_sql = "SELECT * FROM users WHERE username_or_email='$user' AND password=MD5('$pass')";
+    // Check if the user exists
+    $user_sql = "SELECT * FROM users WHERE username='$user'";
     $user_result = $conn->query($user_sql);
 
+    // If the user is found
     if ($user_result->num_rows > 0) {
-        // User login successful
         $row = $user_result->fetch_assoc();
 
-        // Store user ID and role in the session
-        $_SESSION['user_id'] = $row['id']; // Assuming the user ID column is 'id'
-        $_SESSION['user_type'] = 'jobseeker'; // Storing the role (admin/customer)
+        // Verify the password using password_verify()
+        if (password_verify($pass, $row['password'])) {
+            // Store user ID and type in the session
+            $_SESSION['user_id'] = $row['user_id']; // Adjust based on your user ID column name
+            $_SESSION['user_type'] = $row['user_type']; // Store the user type
 
-        // Redirect based on the user's role
-        if ($row['user_type'] === 'admin') {
-            header("Location: admin/dashboard.php");
-        }if ($row['user_type'] === 'recruiter') {
-            header("Location: admin/dashboard.php");
+            // Redirect based on the user's role
+            if ($row['user_type'] === 'admin') {
+                header("Location: admin/dashboard.php");
+            } elseif ($row['user_type'] === 'recruiter') {
+                header("Location: recruiter/dashboard.php"); // Different dashboard for recruiters
+            } else {
+                header("Location: homepage(nk).php");
+            }
+            exit(); // Stop further execution
         } else {
-            header("Location: homepage(nk).php");
+            $error = "Invalid username or password!"; // Set error message
         }
-        exit();
     } else {
-        $error = "Invalid username or password!";
+        $error = "Invalid username or password!"; // Set error message
     }
 
-    $conn->close();
+    $conn->close(); // Close the database connection
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>HireNet</title>
-    <link rel="stylesheet" href="../Hirenet/css/login(nk).css">
-
+    <title>HireNet - Login</title>
+    <link rel="stylesheet" href="../Hirenet/css/login(nk).css"> <!-- Link to CSS -->
 </head>
 <body>
     <div class="container">
+        <h1><b>Login</b></h1>
+        <form action="" method="post"> <!-- Action is the same page -->
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="username" name="uname" required placeholder="Enter Username">
 
-    <h1><b>Login</b></h1>
-    
-    <form id="login-form">
-        <label for ="username">Username</label>
-        <input type="text" id="username" name="username "required>
-        <br>
-        <br>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="password" name="psw" required placeholder="Enter Password">
 
-        <label for ="password">Password</label>
-        <input type="text" id="password" name="psw"required>
-        <br><br>
-        <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-        <br><br>
-        <input type="submit" name="register" value="Login">
+            <button type="submit">Login</button> <!-- Submit button -->
+            <label>
+                <input type="checkbox" name="remember" checked="checked"> Remember me
+            </label>
+        </form>
 
-    </form>
-        <div id="error-message"></div>
-        </div> 
-    
-        <script src="../Hirenet/css/login(nk).js"></script>
+        <!-- Display error message if there's one -->
+        <?php if ($error): ?>
+            <div id="error-message" style="color:red;"><?= $error ?></div>
+        <?php endif; ?>
 
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
 </body>
 </html>

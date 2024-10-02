@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
 
-        const name = document.getElementById("name").value;
+        const name = document.getElementById("username").value;
 
-        const email = document.getElementById("username_or_email").value;
+        const email = document.getElementById("email").value;
 
         const password = document.getElementById("password").value;
 
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const xhr = new XMLHttpRequest();
 
-        xhr.open("POST", "homepage(nk).php", true);
+        xhr.open("POST", "insert.inc.php", true);
 
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-        xhr.send("name=" + name + "&username_or_email=" + username_or_email+ "&password=" + password);
+        xhr.send("username=" + username + "&email=" + email + "&password=" + password);
 
 
         xhr.onload = function() {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Sign up successful, redirect to a success page
                 document.write("sign up successful")
-                window.location.href = "homepage(nk).php";
+                window.location.href = "insert.inc.php";
 
             } else {
 

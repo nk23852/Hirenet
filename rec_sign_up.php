@@ -38,7 +38,7 @@
 
             <input type="phone_number" id="Phone_Number" name="Phone_Number"><br><br>
 
-            <input type="hidden" name="user_type" value="job_seeker">
+            <input type="hidden" name="user_type" value="recruiter">
 
             <input type="submit" name ="register" value="Sign Up">
         

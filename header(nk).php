@@ -23,8 +23,8 @@
         </nav>
 
         <div class="buttons">
-            <button id="recruiterBtn">Log in</button>
-            <button id="seekerBtn">Sign up</button>
+            <button id="loginBtn">Log in</button>
+            <button id="signupBtn">Sign up</button>
         </div>
 
     </header>
