@@ -1,0 +1,92 @@
+<!--IT23538696 RPNS Pathiranage-->
+<!--References: Youtube channel: Mr.Web designer https://www.youtube.com/@MrWebDesignerAnas-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recruiter User Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Recruiter User Account</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Login Form -->
+            <div class="form-box">
+                <form action="#" method="POST" class="login-form">
+                    <h2>Login</h2>
+                    <div class="input-group">
+						<label for="email">Email:</label>
+                        <input type="text" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+						<label for="password">Password:</label>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <a href="#" onclick="showCheckMessage()" class="forgot-password">Forgot password?</a>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-box">
+                <form action="#" method="POST" class="signup-form">
+                    <h2>Sign Up Now</h2>
+                    <div class="input-group">
+						<label for="fullName">Full Name</label>
+						<input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+					</div>
+            
+					<div class="input-group">
+						<label for="username">Username</label>
+						<input type="text" id="username" name="username" placeholder="Enter your username" required>
+					</div>
+            
+					<div class="input-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="Enter your email" required>
+					</div>
+            
+					<div class="input-group">
+						<label for="phone">Phone Number</label>
+						<input type="tel" id="phone" name="phone" placeholder="Enter your number">
+					</div>
+            
+					<div class="input-group">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" placeholder="Enter your password" required>
+					</div>
+            
+					<div class="input-group">
+						<label for="confirmPassword">Confirm Password</label>
+						<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+					</div>
+
+					
+					<button type="submit" onclick="showSuccessMessage()">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+
+    <script>
+        function showCheckMessage() {
+            alert("Check your email account and Verify the OTP code!");
+        }
+    </script>
+	
+	<script>
+        function showSuccessMessage() {
+            alert("Successfully Registered to the website!");
+        }
+    </script>
+	
+</body>
+</html>

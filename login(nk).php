@@ -28,9 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($row['user_type'] === 'admin') {
                 header("Location: admin/dashboard.php");
             } elseif ($row['user_type'] === 'recruiter') {
-                header("Location: recruiter/dashboard.php"); // Different dashboard for recruiters
+                header("Location: IT23538696 HireNet/Applications.php"); // Different dashboard for recruiters
             } else {
-                header("Location: homepage(nk).php");
+                header("Location: user/homenew.php");
             }
             exit(); // Stop further execution
         } else {

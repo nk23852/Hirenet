@@ -1,0 +1,148 @@
+/*IT23538696 RPNS Pathiranage*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: black;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    height: 100vh; /* Full height */
+}
+
+.sidebar h1 {
+    text-align: center;
+}
+
+.sidebar-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-profile h2{
+    margin-top: 20px;
+    text-align: center;
+	color: white;
+}
+
+.profile-box {
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 200px; /* Increased height */
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular profile picture */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+h2 {
+    color: blue;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/*Applicants Table */
+#applicantsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#applicantsTable th, #applicantsTable td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+}
+
+#applicantsTable th {
+    background-color: #f2f2f2;
+}
+
+/*Add New Applicant Form */
+#addApplicantForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+#addApplicantForm label {
+    margin-right: 10px;
+}
+
+#addApplicantForm input {
+    flex: 1;
+    max-width: 200px; /* Adjust max-width as needed */
+}
+
+#addApplicantForm button {
+    /*submit button */
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addApplicantForm button:hover {
+    background-color: #0056b3; 
+}
+
+/* Modal styling - w3shool- https://www.w3schools.com/howto/howto_css_modals.asp*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

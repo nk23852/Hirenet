@@ -79,50 +79,12 @@
 
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone">
-            </div>
 
-            <!-- Address Section -->
-            <div class="section">
-                <h2>Address</h2>
                 <label for="address">Address</label>
                 <input type="text" id="address" name="address">
-
-                <label for="city">City</label>
-                <input type="text" id="city" name="city">
-
-                <label for="state">State</label>
-                <input type="text" id="state" name="state">
-
-                <label for="zip">ZIP Code</label>
-                <input type="text" id="zip" name="zip">
             </div>
 
-            <!-- Education Section -->
-            <div class="section">
-                <h2>Education</h2>
-                <label for="education">Degree / Major</label>
-                <input type="text" id="education" name="education">
-
-                <label for="institution">Institution</label>
-                <input type="text" id="institution" name="institution">
-
-                <label for="graduationYear">Graduation Year</label>
-                <input type="text" id="graduationYear" name="graduationYear">
-            </div>
-
-            <!-- Work Experience Section -->
-            <div class="section">
-                <h2>Work Experience</h2>
-                <label for="jobTitle">Job Title</label>
-                <input type="text" id="jobTitle" name="jobTitle">
-
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company">
-
-                <label for="years">Years of Experience</label>
-                <input type="text" id="years" name="years">
-            </div>
-
+            
             <button type="submit">Save Profile</button>
         </form>
     </div>
