@@ -1,0 +1,98 @@
+/*variable color */
+:root{
+    --primaryColor: #ff901d;
+    --sofColor:#fedddd;
+    --whiteColor:#f5f5f5;
+    --blackColor:#222;
+}
+.container{
+    width:80;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 60px 40px 40px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2)
+}
+.container .content{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .content .left-side{
+    width: 25%;
+    height: 100%;
+    position:relative;
+}
+
+/*line*/
+.content .left-side::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1.5px;
+    right: -15px;
+    
+    transform: translateY(-80);
+    background: #d6d6d6;
+
+}
+.container .content .rigth-side{
+    width:65%
+}
+/*Address phone email*/
+.container .left-side .details{
+    margin: 6px;
+    color:rgb(0, 0, 0) ;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.content .left-side .details .topic{
+    font-size: 18px;
+    font-weight: 500;
+}
+/*text 1&2*/
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+    font-size: 14px;
+    color: #969696;
+}
+.content .rigth-side .topic-text{
+    font-size: 40px;
+    font-weight: 600;
+    color: #003d83;
+    margin-bottom: 20px;
+}
+
+.rigth-side .input-box input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    background: rgb(228, 228, 228);
+    border-radius:6px ;
+    font-size: 16px;
+    padding: 0px 15px;
+    
+}
+
+.rigth-side .input-box textarea{
+    height: 100px;
+    width: 100%;
+    border: none;
+    background: rgb(228, 228, 228);
+    border-radius:6px ;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin: 3px 1px;
+    cursor: pointer;
+    border-radius: 6px;
+  }

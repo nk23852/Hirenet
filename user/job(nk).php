@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="homenew.php">Home</a></li>
-                <li><a href="./job(nk).php">Jobs</a></li>
+                <li><a href="jobs.php">Jobs</a></li>
                 <li><a href="../kaveesha/insert.php">FAQ</a></li>
                 <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
             </ul>
