@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $conn = new mysqli("localhost", "root", "", "hirenetdb");
 
 if ($conn->connect_error) {
@@ -9,7 +9,6 @@ if ($conn->connect_error) {
 if (isset($_GET['id'])) {
     $T_id = $_GET['id'];
 
-    // Fetch job details for editing
     $sql = "SELECT * FROM terms_details WHERE T_id=$T_id";
     $result = $conn->query($sql);
     $term = $result->fetch_assoc();
@@ -23,7 +22,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Job Post</title>
     <style>
-        /* General body styling */
+       
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -35,7 +34,6 @@ body {
     height: 100vh;
 }
 
-/* Container for the form */
 form {
     background-color: #ffffff;
     padding: 20px;

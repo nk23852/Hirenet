@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $termName = $_POST["termName"];
         $descript = $_POST["descript"];
 
-        // Insert data into the database
+        
         $sql = "INSERT INTO terms_details (termName, descript) 
                 VALUES ('$termName', '$descript')";
 

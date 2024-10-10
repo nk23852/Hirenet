@@ -1,23 +1,18 @@
-/* Reset */
-header {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
 
-/* Header Style */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0);
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(255, 217, 0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,31 +28,32 @@ header {
 }
 
 nav {
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
+    align-items: center;
+    padding-left: 0;
 }
 
 nav ul li {
     margin-right: 30px;
-    position: relative; /* Needed for dropdown positioning */
+    /* Adds space between list items */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: cyan;
     font-size: 20px;
     white-space: nowrap;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration:blue;
 }
 
-/* Buttons */
 .buttons {
     display: flex;
 }
@@ -68,7 +64,7 @@ nav ul li a:hover {
     font-size: 25px;
     color: rgb(255, 255, 255);
     font-weight: bolder;
-    background-color: #1E90FF; /* Green for buttons */
+    background-color: #1E90FF; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -76,35 +72,35 @@ nav ul li a:hover {
 }
 
 .buttons button:hover {
-    background-color: #170d97; /* Hover effect */
-    transform: scale(1.1); /* Slightly enlarge button */
+    background-color: #170d97;
+    transform: scale(1.1);
 }
 
-/* General Dropdown Styling */
-nav ul li .dropdown, 
-.buttons .dropdown {
-    display: none; /* Hide dropdown by default */
-    position: absolute;
-    background-color: #000000;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    min-width: 150px;
+.user-icon {
+    width: 100px;
+    height: 100px;
 }
 
-nav ul li:hover .dropdown,
-.buttons .dropdown-container:hover .dropdown {
-    display: block; /* Show dropdown on hover */
+.user-section {
+    display: flex;
+    align-items: center;
 }
 
-.dropdown li {
-    margin: 0;
-    padding: 0;
+
+.user-section button {
+    margin-left: 15px;
+    padding: 10px 15px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    background-color: #1E90FF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.dropdown li a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
+.user-section button:hover {
+    background-color: #170d97;
+    transform: scale(1.1);
 }

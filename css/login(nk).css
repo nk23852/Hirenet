@@ -1,88 +1,95 @@
 body {
 
-font-family: Arial, sans-serif;
-background-color: #f4f4f4;
-background-image: url(../images/loginback\(nk\).jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(../images/loginback\(nk\).jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
 
 
 
 }
+
 .container {
 
-width: 50%;
+    width: 450px;
 
-margin: 40px auto;
+    height: 350px;
+    margin: 40px auto;
 
-padding: 20px;
+    padding: 10px;
 
-background-color: #fef8f8;
+    background-color: #fef8f8;
 
-border: 1px solid #ddd;
+    border: 1px solid #ddd;
 
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
- /* Add this to align it to the right */
- margin: 40px 20px 40px auto;
-    position: relative;
-    
+    justify-content: center;
 
+    align-items: center;
 }
+
 h1 {
 
-text-align: center;
-font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+    
 
 }
 
 label {
 
-display: block;
+    display: block;
 
-margin-bottom: 10px;
-
-}
-input[type="text"], input[type="username"], input[type="username"] {
-
-width: 90%;
-
-height: 30px;
-
-margin-bottom: 20px;
-
-padding: 10px;
-
-border: 1px solid #ccc;
-
-}
-input[type="submit"] {
-
-background-color: #4CAF50;
-
-color: #fff;
-
-padding: 10px 20px;
-
-border: none;
-
-border-radius: 5px;
-
-cursor: pointer;
+    margin-bottom: 10px;
 
 }
 
-input[type="submit"]:hover {
+input[type="text"],
+input[type="username"],
+input[type="password"] {
 
-background-color: #2019af;
+    width: 90%;
+
+    height: 30px;
+
+    margin-bottom: 20px;
+
+    padding: 5px;
+
+    border: 1px solid #ccc;
 
 }
+
+.login {
+
+    background-color: #4CAF50;
+
+    color: #fff;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.login:hover {
+
+    background-color: #2019af;
+
+}
+
 #error-message {
 
-color: #9f2250; 
+    color: #9f2250;
 
-margin-top: 10px;
+    margin-top: 10px;
 
 }

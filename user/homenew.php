@@ -1,44 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirenet</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="../css/header3(nk).css">
-    <link rel="stylesheet" href="./home(nk).css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-color: lightgray;
+        }
+
+        header {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .site-name {
+            font-size: 100px;
+            margin-left: 10px;
+            font-weight: bold;
+            color: rgb(255, 217, 0);
+        }
+
+        nav {
+            margin-left: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+            /* Adds space between list items */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: cyan;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        nav ul li a:hover {
+            text-decoration:blue;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .user-section button {
+            margin-left: 15px;
+            padding: 10px 15px;
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .user-section button:hover {
+            background-color: #170d97;
+            transform: scale(1.1);
+        }
+
+        .user-icon {
+            width: 100px;
+            height: 100px;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 
-    <header>
-        <div class="logo">
-            <img src="../images/logo.jpg" alt="Hirenet Logo">
-        </div>
-        <div class="site-name">Hirenet</div>
-        <nav>
-            <ul>
-                <li><a href="homenew.php">Home</a></li>
-                <li><a href="./job(nk).php">Jobs</a></li>
-                <li><a href="../kaveesha/insert.php">FAQ</a></li>
-                <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
-            </ul>
-        </nav>
+<header>
+    <div class="logo">
+        <img src="../images/logo.jpg" alt="Hirenet Logo">
+    </div>
+    <div class="site-name">Hirenet</div>
+    <nav>
+        <ul>
+            <li><a href="homenew.php">Home</a></li>
+            <li><a href="./job(nk).php">Jobs</a></li>
+            <li><a href="../kaveesha/insert.php">FAQ</a></li>
+            <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
+        </ul>
+    </nav>
 
-        <div class="user-section">
-            <img src="../Hirenet/images/user-icon.png" alt="User Icon" class="user-icon">
-            <button id="logoutBtn">Log out</button>
-        </div>
+    <div class="user-section">
+        <img src="../images/219983.png" alt="User Icon" class="user-icon" style="width: 100px; height: 100px;">
+        <button id="logoutBtn">Log out</button>
+    </div>
 
-    </header>
+</header>
 
-    <!-- Link to external JS -->
- 
+
 <body>
 
-<section class="intro-section">
-    <h2>Welcome to Hirenet</h2>
-    <p>
-        Hirenet is your one-stop solution for job seekers and recruiters. Whether you're looking to advance your career or find top talent, our platform connects you with the right opportunities and people. Explore job listings, connect with employers, and take the next step in your professional journey.
-    </p>
+    <section class="intro-section">
+        <h2>Welcome to Hirenet</h2>
+        <p>
+            Hirenet is your one-stop solution for job seekers and recruiters. Whether you're looking to advance your career or find top talent, our platform connects you with the right opportunities and people. Explore job listings, connect with employers, and take the next step in your professional journey.
+        </p>
     </section>
 
     <!-- Job Posts Section -->
@@ -76,9 +163,9 @@
             $conn->close();
             ?>
         </div>
-    </section>    
+    </section>
     <!-- Job Post Slider Section -->
-<script src="../js/header(nk).js"></script>
+    <script src="../js/header(nk).js"></script>
 </body>
 
 <footer>

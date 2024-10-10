@@ -31,9 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-    </div>
+    
 </footer>
 
 <!-- Link to external CSS and JS -->

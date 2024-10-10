@@ -1,97 +1,91 @@
 <?php
-    include 'header(nk).php'; 
+session_start();
+include 'db_connect.php';
+
+$user_id = $_SESSION['user_id'];
+
+$sql = "SELECT * FROM users WHERE user_id = $user_id";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+} else {
+    echo "Error: User not found or query failed.";
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Seeker Profile - Hirenet</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #0073e6;
-            padding-bottom: 5px;
-            color: #0073e6;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
-        input[type="text"], input[type="email"], input[type="tel"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #0073e6;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #005bb5;
-        }
-    </style>
+    <link rel="stylesheet" href="../Hirenet/css/header3(nk).css">
+    <link rel="stylesheet" href="../Hirenet/css/juser.css">
 </head>
-<body>
 
+<header>
+    <div class="logo">
+        <img src="../Hirenet/images/logo.jpg" alt="Hirenet Logo">
+    </div>
+    <div class="site-name">Hirenet</div>
+    <nav>
+        <ul>
+            <li><a href="../Hirenet/user/homenew.php">Home</a></li>
+            <li><a href="./job(nk).php">Jobs</a></li>
+            <li><a href="../kaveesha/insert.php">FAQ</a></li>
+            <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="user-section">
+        <img src="../Hirenet/images/219983.png" alt="User Icon" class="user-icon">
+        <button id="logoutBtn" onclick="window.location.href='../HIRENET/homepage(nk).php';">Log out</button>
+    </div>
+</header>
+
+<body>
     <div class="container">
         <h1>Job Seeker Profile</h1>
 
-        <form>
+        <form method="POST" enctype="multipart/form-data">
             <!-- Personal Information Section -->
             <div class="section">
                 <h2>Personal Information</h2>
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
+                <input type="text" id="username" name="username" value="<?php echo $user['username']; ?>" required><br>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
 
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" value="<?php echo $user['phone_number']; ?>" required><br>
 
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address">
+                <label for="cv">Uploaded CV:</label>
+                <?php if (!empty($user['cv'])): ?>
+                    <div class="cv-section">
+                        <h2>Your CV</h2>
+                        <embed src="<?php echo 'uploads/cvs/' . urlencode($user['cv']); ?>" width="600" height="500" type="application/pdf">
+                    </div>
+                <?php else: ?>
+                    <p>No CV uploaded yet.</p>
+                <?php endif; ?>
+
+
             </div>
 
-            
+
             <button type="submit">Save Profile</button>
         </form>
-    </div>
 
+
+    </div>
 </body>
+
 </html>
 
 <?php
-    include 'footer(nk).php'; 
+include 'footer(nk).php';
 ?>

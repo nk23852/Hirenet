@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Job Post</title>
     <style>
-        /* General body styling */
+        
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -35,7 +35,7 @@ body {
     height: 100vh;
 }
 
-/* Container for the form */
+
 form {
     background-color: #ffffff;
     padding: 20px;
@@ -44,7 +44,7 @@ form {
     width: 400px;
 }
 
-/* Labels and inputs */
+
 label {
     display: block;
     font-size: 16px;
@@ -62,13 +62,13 @@ textarea {
     font-size: 14px;
 }
 
-/* Textarea styling */
+
 textarea {
     height: 100px;
     resize: vertical;
 }
 
-/* Submit button styling */
+
 input[type="submit"] {
     background-color: #5cb85c;
     color: white;
@@ -84,7 +84,7 @@ input[type="submit"]:hover {
     background-color: #4cae4c;
 }
 
-/* Responsive design */
+
 @media (max-width: 600px) {
     form {
         width: 90%;
