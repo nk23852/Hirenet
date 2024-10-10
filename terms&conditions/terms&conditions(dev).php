@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: terms&conditions(dev).php");
         echo "Error: " . $conn->error;
         exit();
-        //echo "Error: " . $conn->error;
     }
 }
 
@@ -32,7 +31,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Terms and Conditions</title>
     <link rel="stylesheet" href="./terms.css"> <!-- Link to CSS -->
-    
+
 </head>
 
 <body>
@@ -44,15 +43,20 @@ $conn->close();
         <form name="termForm" action="terms&conditions(dev).php" method="POST" onsubmit="return validateForm()">
 
             <label for="termName">Enter Term Name:</label>
-            <input type="text" id="termName" name="termName" ><br><br>
+            <input type="text" id="termName" name="termName"><br><br>
 
             <label for="descript">Add a Description:</label>
-            <textarea id="descript" name="descript" ></textarea><br><br>
+            <textarea id="descript" name="descript" oninput="updateCharacterCount()" maxlength="500"></textarea>
+
+            <div id="charCount">Characters: 0/20</div><br><br>
 
             <input type="submit" name="register" value="Add">
         </form>
 
         <div id="error-message"></div>
+
+
+
     </div>
 
     <h2>Terms & Conditions</h2>
@@ -70,7 +74,7 @@ $conn->close();
                 <td>{$row['descript']}</td>
                 <td>
                     <a href='edit_term.php?id={$row['T_id']}'>Edit</a> |
-                    <a href='delete_term.php?id={$row['T_id']}'>Delete</a>
+                    <a href='delete_term.php?id={$row['T_id']}'onclick='return confirmDelete()'>Delete</a>
                 </td>
             </tr>";
             }
@@ -80,7 +84,7 @@ $conn->close();
         ?>
     </table>
 
-<script src="./terms.js"></script>
+    <script src="./terms.js"></script>
 
 </body>
 
