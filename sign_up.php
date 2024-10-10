@@ -16,12 +16,12 @@
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
+            
+            <label for="confirm-password">confirm-password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required><br><br>
 
             <label for="phone_number">Phone Number:</label>
             <input type="text" id="phone_number" name="phone_number"><br><br>
-
-            <label for="cv">Upload CV:</label>
-            <input type="file" id="cv" name="cv"><br><br>
 
             <input type="hidden" name="user_type" value="job_seeker">
             <input type="submit" name="register" value="Sign Up">

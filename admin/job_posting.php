@@ -84,7 +84,7 @@ $result = $conn->query($sql);
             text-decoration: underline;
         }
     </style>
-    
+    <script src="adminjs/delete.js"></script>
 </head>
 <body>
     <h1>Manage Job Posts</h1>
@@ -119,8 +119,9 @@ $result = $conn->query($sql);
                     <td>{$row['job_description']}</td>
                     <td>{$row['job_location']}</td>
                     <td>
-                        <a href='edit_job.php?id={$row['job_id']}'>Edit</a> |
-                        <a href='delete_job.php?id={$row['job_id']}'>Delete</a>
+                        <a href='edit_job.php?id={$row['job_id']}'>Edit</a> 
+            
+                        <a href='#' onclick=confirmDeletion({$row['job_id']});return false;'>Delete</a>
                     </td>
                 </tr>";
             }

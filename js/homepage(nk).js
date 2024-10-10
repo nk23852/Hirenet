@@ -1,5 +1,4 @@
-<script>
-    // JavaScript for enhancing job post interactions
+
     document.addEventListener("DOMContentLoaded", () => {
         const jobItems = document.querySelectorAll('.job-item');
 
@@ -14,4 +13,4 @@
             });
         });
     });
-</script>
+

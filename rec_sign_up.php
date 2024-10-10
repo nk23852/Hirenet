@@ -13,7 +13,7 @@
 
     <div class="container">
 
-        <h1>Job Seeker Sign Up</h1>
+        <h1>Recruiter Sign Up</h1>
 
         <form action="./insert.inc.php" method="post">
 

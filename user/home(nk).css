@@ -1,3 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/background\(nk1\).jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .job-posts-container {
     display: flex;
     flex-direction: column;
@@ -6,11 +16,13 @@
 }
 
 .job-post {
-    border: 1px solid #ddd;
-    padding: 15px;
+    background-color: white;
+    margin: 15px 0;
+    padding: 20px;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    margin-left: 120px;
 }
 
 .job-post h4 {

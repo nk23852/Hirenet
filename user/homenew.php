@@ -5,103 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirenet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            background-color: lightgray;
-        }
+    <link rel="stylesheet" href="../css/header3(nk).css">
+    <link rel="stylesheet" href="../css/homepage(nk).css">
 
-        header {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: black;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    <!--javascript part-->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const jobItems = document.querySelectorAll('.job-post');
 
-        .logo img {
-            width: 150px;
-            height: 150px;
-        }
+        jobItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'scale(1.05)';
+                item.style.transition = 'transform 0.3s ease';
+            });
 
-        .site-name {
-            font-size: 100px;
-            margin-left: 10px;
-            font-weight: bold;
-            color: rgb(255, 217, 0);
-        }
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'scale(1)';
+            });
+        });
+    });
 
-        nav {
-            margin-left: 50px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-            padding-left: 0;
-        }
-
-        nav ul li {
-            margin-right: 30px;
-            /* Adds space between list items */
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: cyan;
-            font-size: 20px;
-            white-space: nowrap;
-        }
-
-        nav ul li a:hover {
-            text-decoration:blue;
-        }
-
-        .buttons {
-            display: flex;
-        }
-
-        .user-section button {
-            margin-left: 15px;
-            padding: 10px 15px;
-            font-size: 25px;
-            color: rgb(255, 255, 255);
-            font-weight: bolder;
-            background-color: #1E90FF;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .user-section button:hover {
-            background-color: #170d97;
-            transform: scale(1.1);
-        }
-
-        .user-icon {
-            width: 100px;
-            height: 100px;
-        }
-
-        .user-section {
-            display: flex;
-            align-items: center;
-        }
-    </style>
+    </script>
 </head>
 
 <header>
+
     <div class="logo">
-        <img src="../images/logo.jpg" alt="Hirenet Logo">
+        <img src="../images/logo.png" alt="Hirenet Logo">
     </div>
-    <div class="site-name">Hirenet</div>
     <nav>
         <ul>
             <li><a href="homenew.php">Home</a></li>
@@ -112,9 +43,9 @@
     </nav>
 
     <div class="user-section">
-        <img src="../images/219983.png" alt="User Icon" class="user-icon" style="width: 100px; height: 100px;">
+        <img src="../images/pIcon.png" alt="User Icon" class="user-icon" style="width: 100px; height: 100px;">
         <button id="logoutBtn">Log out</button>
-    </div>
+    </div>   
 
 </header>
 
@@ -130,7 +61,7 @@
 
     <!-- Job Posts Section -->
     <section class="job-posts-section">
-        <h3>Latest Job Posts</h3>
+      
         <div class="job-posts-container">
             <?php
             // Connect to the database

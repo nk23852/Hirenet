@@ -27,30 +27,31 @@ if ($result && $result->num_rows > 0) {
 </head>
 
 <header>
+
     <div class="logo">
-        <img src="../Hirenet/images/logo.jpg" alt="Hirenet Logo">
+        <img src="./images/logo.png" alt="Hirenet Logo">
     </div>
-    <div class="site-name">Hirenet</div>
     <nav>
         <ul>
-            <li><a href="../Hirenet/user/homenew.php">Home</a></li>
-            <li><a href="./job(nk).php">Jobs</a></li>
+            <li><a href="./user/homenew.php">Home</a></li>
+            <li><a href="./user/job(nk).php">Jobs</a></li>
             <li><a href="../kaveesha/insert.php">FAQ</a></li>
-            <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
+            <li><a href="../Hirenet/jobSeekerUser(nk).php">Profile</a></li>
         </ul>
     </nav>
 
     <div class="user-section">
-        <img src="../Hirenet/images/219983.png" alt="User Icon" class="user-icon">
-        <button id="logoutBtn" onclick="window.location.href='../HIRENET/homepage(nk).php';">Log out</button>
-    </div>
+        <img src="./images/pIcon.png" alt="User Icon" class="user-icon" style="width: 100px; height: 100px;">
+        <button id="logoutBtn">Log out</button>
+    </div>   
+
 </header>
 
 <body>
     <div class="container">
         <h1>Job Seeker Profile</h1>
 
-        <form method="POST" enctype="multipart/form-data">
+        <form action="update_user.php" method="POST">
             <!-- Personal Information Section -->
             <div class="section">
                 <h2>Personal Information</h2>
@@ -63,25 +64,21 @@ if ($result && $result->num_rows > 0) {
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" value="<?php echo $user['phone_number']; ?>" required><br>
 
-                <label for="cv">Uploaded CV:</label>
-                <?php if (!empty($user['cv'])): ?>
-                    <div class="cv-section">
-                        <h2>Your CV</h2>
-                        <embed src="<?php echo 'uploads/cvs/' . urlencode($user['cv']); ?>" width="600" height="500" type="application/pdf">
-                    </div>
-                <?php else: ?>
-                    <p>No CV uploaded yet.</p>
-                <?php endif; ?>
-
-
             </div>
 
 
-            <button type="submit">Save Profile</button>
+            <button type="submit" name="action" value="save">Save Profile</button>
+            <button type="submit" name="action" value="delete" style="background-color: red; color: white;">Delete Profile</button>
         </form>
 
 
     </div>
+    <script>
+        
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            window.location.href = 'index.php'; 
+        });
+    </script>
 </body>
 
 </html>

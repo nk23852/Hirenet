@@ -9,28 +9,26 @@
     <link rel="stylesheet" href="./home(nk).css">
 </head>
 
-    <header>
-        <div class="logo">
-            <img src="../images/logo.jpg" alt="Hirenet Logo">
-        </div>
-        <div class="site-name">Hirenet</div>
-        <nav>
-            <ul>
-                <li><a href="homenew.php">Home</a></li>
-                <li><a href="jobs.php">Jobs</a></li>
-                <li><a href="../kaveesha/insert.php">FAQ</a></li>
-                <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
-            </ul>
-        </nav>
+<header>   
+    
+    <div class="logo">
+        <img src="../images/logo.png" alt="Hirenet Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="homenew.php">Home</a></li>
+            <li><a href="./job(nk).php">Jobs</a></li>
+            <li><a href="../kaveesha/insert.php">FAQ</a></li>
+            <li><a href="../jobSeekerUser(nk).php">Profile</a></li>
+        </ul>
+    </nav>
 
-        <div class="user-section">
-            <img src="../Hirenet/images/user-icon.png" alt="User Icon" class="user-icon">
-            <button id="logoutBtn">Log out</button>
-        </div>
+    <div class="user-section">
+        <img src="../images/pIcon.png" alt="User Icon" class="user-icon" style="width: 100px; height: 100px;">
+        <button id="logoutBtn">Log out</button>
+    </div>   
 
-    </header>
-
-    <!-- Link to external JS -->
+</header>
  
 <body>
 
@@ -79,6 +77,19 @@
     </section>    
     <!-- Job Post Slider Section -->
 <script src="../js/header(nk).js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const jobPosts = document.querySelectorAll('.job-post');
+        jobPosts.forEach(post => {
+            post.addEventListener('mouseover', function() {
+                post.style.backgroundColor = '#b3e0ff'; // Change background color on hover
+            });
+            post.addEventListener('mouseout', function() {
+                post.style.backgroundColor = ''; // Reset background color
+            });
+        });
+    });
+</script>
 </body>
 
 <footer>
