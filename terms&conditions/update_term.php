@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $termName = $_POST['termName'];  // Term name
     $descript = $_POST['descript'];  // Term description
 
-    /
+    
     $sql = "UPDATE terms_details 
             SET termName='$termName', descript='$descript' 
             WHERE T_id=$T_id";
