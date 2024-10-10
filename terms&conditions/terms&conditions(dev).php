@@ -10,8 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($terms) === TRUE) {
 
         header("Location: terms&conditions(dev).php");
-        exit();
         echo "Error: " . $conn->error;
+        exit();
+        //echo "Error: " . $conn->error;
     }
 }
 
