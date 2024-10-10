@@ -15,10 +15,17 @@
         
         <nav>
             <ul>
+<<<<<<< HEAD
                 <li><a href="index.php">Home</a></li>
                 <li><a href="./user/job(nk).php">Jobs</a></li>
                 <li><a href="../Hirenet/kaveesha/insert.php">FAQ</a></li>
                 <li><a href="./login(nk).php">Profile</a></li>
+=======
+                <li><a href="homepage(nk).php">Home</a></li>
+                <li><a href="../Hirenet/user/job(nk).php">Jobs</a></li>
+                <li><a href="../Hirenet/kaveesha/insert.php">Contact Us</a></li>
+                <!--<li><a href="profile.php">Profile</a></li>-->
+>>>>>>> ea22fe0f0d0fdcba6ad367be81674e979f717061
             </ul>
         </nav>
 

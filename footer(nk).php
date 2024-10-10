@@ -12,7 +12,11 @@
             <ul>
                 <li><a href="about-us.php">About Us</a></li>
                 <li><a href="./terms&conditions(nk).php">Terms & Conditions</a></li>
+<<<<<<< HEAD
                 <li><a href="../Hirenet/kaveesha/privacy.policy.php">Privacy Policy</a></li>
+=======
+                <li><a href="./kaveesha/privacy.policy.php">Privacy Policy</a></li>
+>>>>>>> ea22fe0f0d0fdcba6ad367be81674e979f717061
             </ul>
         </div>
 
