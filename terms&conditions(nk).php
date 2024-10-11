@@ -1,4 +1,3 @@
-
 <?php
     include 'header(nk).php'; 
     include "db_connect.php";
@@ -18,24 +17,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color:#e7d9f5 ;
         }
         h1 {
-            color: #333;
+            color: #41235e;
+            text-align: center;;
         }
-        h2 {
+        h3 {
             color: #0073e6;
         }
         p {
             color: #666;
             line-height: 1.6;
         }
+
         section {
-            background-color: #fff;
+            background-color: ##e7d9f5;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 100px 2px 5px rgba(0,0,0,0.1);
+            box-shadow: px 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -47,7 +48,7 @@
         <?php
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<h2>{$row['termName']}</h2>";
+                echo "<h3>{$row['termName']}</h3>";
                 echo "<p>{$row['descript']}</p>";
             }
         } else {
@@ -61,7 +62,5 @@
 </body>
 
 <?php
-    include 'footer(nk).php'; 
+    include 'footer(nk).php'; 
 ?>
-
-
