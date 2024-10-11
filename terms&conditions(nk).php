@@ -55,12 +55,12 @@
             echo "<p>No terms and conditions available at this time.</p>";
         }
 
-        // Closing the database connection
+        
         $conn->close();
         ?>
     </section>
 </body>
 
 <?php
-    include 'footer(nk).php'; 
+    include 'footer(nk).php';
 ?>
